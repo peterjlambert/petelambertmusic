@@ -1,12 +1,17 @@
 a {
-    color: var(--primaryColor);
-    text-decoration: underline;
+	color: var(--textColor);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	text-decoration-color: var(--primaryColor);
+	transition: all 0.3s ease-in-out;
 
-    &:hover {
-        // 
-    }
-    svg {
-        display: inline-block;
-        fill: currentColor;
-    }
+	&:hover {
+		color: var(--focusColor);
+		text-decoration-color: var(--focusColor);
+		text-decoration-color: var(--textColor);
+	}
+	svg {
+		display: inline-block;
+		fill: currentColor;
+	}
 }

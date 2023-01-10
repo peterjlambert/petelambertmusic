@@ -1,6 +1,8 @@
 body {
-    color: var(--textColor);
-    background-color: var(--backgroundColor);
-    padding-right: var(--scrollbarComp);
-    overflow-x: hidden;
+	color: var(--textColor);
+	background-color: var(--backgroundColor);
+	padding-right: var(--scrollbarComp);
+	overflow-x: hidden;
+	line-height: 1.5;
+	scroll-behavior: smooth;
 }

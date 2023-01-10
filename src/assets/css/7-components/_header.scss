@@ -1,25 +1,36 @@
 .site-header {
-    
-    &__container {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        max-width: var(--container-max-width);
-        margin: 0 auto;
-        padding: 2rem 1rem; // fallback
-        padding: clamp(var(--spacing-x-small), 4vw, var(--spacing-x-large)) clamp(var(--spacing-medium), 3.75vw, var(--spacing-x-large));
-    }
+	background-color: var(--backgroundColor);
+	position: sticky;
+	top: 0;
+	&__container {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: var(--container-max-width);
+		margin: 0 auto;
+		padding: 1rem; // fallback
+		padding: clamp(var(--spacing-x-small), 4vw, var(--spacing-x-large))
+			clamp(var(--spacing-medium), 3.75vw, var(--spacing-x-large));
+		position: relative;
+	}
+	&__logo {
+		&:not(:hover, :focus) {
+			color: var(--textColor);
+		}
+	}
 
-    .nav--primary {
-        
-        ul {
-            font-size: var(--fluid-2);
-            margin: 0.75rem 0;
-        }
-        
-        a {
-            display: block;
-            padding: 0.25em 0;
-        }
-    }
+	.nav--primary {
+		ul {
+			display: flex;
+			font-size: var(--fluid-0);
+			gap: 1rem;
+			margin: 0;
+		}
+
+		a {
+			display: block;
+			padding: 0.25em 0;
+		}
+	}
 }

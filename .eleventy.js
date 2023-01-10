@@ -6,8 +6,6 @@ const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyPluginSyntaxhighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
 
-const rollupPluginCritical = require('rollup-plugin-critical').default
-
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
@@ -15,6 +13,9 @@ const shortcodes = require('./utils/shortcodes.js')
 const { resolve } = require('path')
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.setServerPassthroughCopyBehavior('copy')
+	eleventyConfig.addPassthroughCopy('public')
+
 	// Plugins
 	eleventyConfig.addPlugin(EleventyPluginNavigation)
 	eleventyConfig.addPlugin(EleventyPluginRss)
@@ -35,46 +36,7 @@ module.exports = function (eleventyConfig) {
 			build: {
 				mode: 'production',
 				sourcemap: 'true',
-				manifest: true,
-				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
-				rollupOptions: {
-					output: {
-						assetFileNames: 'assets/css/main.[hash].css',
-						chunkFileNames: 'assets/js/[name].[hash].js',
-						entryFileNames: 'assets/js/[name].[hash].js'
-					},
-					plugins: [
-						rollupPluginCritical({
-							criticalUrl: './_site/',
-							criticalBase: './_site/',
-							criticalPages: [
-								{ uri: 'index.html', template: 'index' },
-								{ uri: 'posts/index.html', template: 'posts/index' },
-								{ uri: '404.html', template: '404' }
-							],
-							criticalConfig: {
-								inline: true,
-								dimensions: [
-									{
-										height: 900,
-										width: 375
-									},
-									{
-										height: 720,
-										width: 1280
-									},
-									{
-										height: 1080,
-										width: 1920
-									}
-								],
-								penthouse: {
-									forceInclude: ['.fonts-loaded-1 body', '.fonts-loaded-2 body']
-								}
-							}
-						})
-					]
-				}
+				manifest: true
 			}
 		}
 	})

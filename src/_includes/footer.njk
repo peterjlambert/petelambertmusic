@@ -1,5 +1,24 @@
 <footer class="site-footer" role="contentinfo">
-    <div class="site-footer__inner container">
-        <p><span>Design & code &copy; {{ build.timestamp | dateToFormat('yyyy') }} Matthias Ott</span></p>
+    <div class="site-footer__inner container container--constrained">
+
+        <div class="footer-contacts">
+            <div class="footer-contacts__item">
+                <h3 class="footer-contacts__title">Booking</h3>
+                For booking enquiries, please contact:
+                <a href="mailto:pete@petelambertmusic.com">pete@petelambertmusic.com</a>
+            </div>
+            <div class="footer-contacts__item">
+                <h3 class="footer-contacts__title">Media</h3>
+                For media enquiries, please contact:
+                <a href="mailto:pete@petelambertmusic.com">pete@petelambertmusic.com</a>
+            </div>
+            <div class="footer-contacts__item">
+                <h3 class="footer-contacts__title">Hugs</h3>
+                For moral support, please contact:
+                <a href="mailto:pete@petelambertmusic.com">pete@whiskeysadnessheartbreak.com</a>
+            </div>
+        </div>
+        <p class="site-footer__copyright">&copy;{{ build.timestamp | dateToFormat('yyyy') }} Pete Lambert</p>
+        
     </div>
 </footer>

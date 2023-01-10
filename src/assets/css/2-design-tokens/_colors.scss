@@ -1,19 +1,21 @@
 :root {
-    --textColor: #1A1A1A;
-    --primaryColor: #7134ff;
-    --focusColor: #7231ff;
-    --backgroundColor: #ffffff;
+	--backgroundColor: #ffffff;
+	--backgroundColor2: #efefef;
+	--textColor: #1a1a1a;
+	--primaryColor: #b9594d;
+	--focusColor: #b9594d;
 }
 
 // Very basic support for a dark color scheme
 @media (prefers-color-scheme: dark) {
-    :root {
-        --color-mode: 'dark';
-    }
+	:root {
+		--color-mode: 'dark';
+	}
 
-    :root:not([data-user-color-scheme]) {
-        --backgroundColor: #1A1A1A;
-        --textColor: #eeeeee;
-        --primaryColor: #A15CFF;
-    }
+	:root:not([data-user-color-scheme]) {
+		--backgroundColor: #1a1a1a;
+		--backgroundColor2: #1f1f1f;
+		--textColor: #eeeeee;
+		--primaryColor: #b9594d;
+	}
 }

@@ -1,0 +1,23 @@
+.quote {
+	margin: 0 0 4rem 0;
+}
+
+.quote__source {
+	font-size: var(--fluid-0);
+	font-family: var(--fontFamilyHeading);
+	font-weight: 100;
+}
+
+.quote__block {
+	border-left: 0.25rem solid var(--primaryColor);
+	padding-left: 1rem;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	font-style: italic;
+	font-size: var(--fluid-0);
+	p {
+		margin-bottom: 0;
+	}
+}
