@@ -1,11 +1,16 @@
 ---
 layout: base
 ---
-<article class="container">
-    <div class="container__content">
-        <h1>{{ title }}</h1>
-        {{ content | safe }}
-        <h1>{{ title }}</h1>
-        {{ content | safe }}
+
+<article>
+    <div class="container hero " id="hero">
+        <heading class="container__content">
+            <h1>{{ title }}</h1>
+        </heading>
+    </div>    
+    <div class="container">
+        <div class="container__content">
+            {{ content | safe }}
+        </div>
     </div>
 </article>

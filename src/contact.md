@@ -2,6 +2,6 @@
 eleventyNavigation:
   key: Contact
   url: /#contact
-  order: 5
+  order: 6
 permalink: false
 ---
