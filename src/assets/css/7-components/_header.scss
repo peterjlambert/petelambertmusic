@@ -1,3 +1,7 @@
+:root {
+	--header-height: 6.5rem;
+}
+
 .site-header {
 	background-color: var(--backgroundColor);
 	position: sticky;
@@ -13,6 +17,7 @@
 		padding: clamp(var(--spacing-x-small), 4vw, var(--spacing-x-large))
 			clamp(var(--spacing-medium), 3.75vw, var(--spacing-x-large));
 		position: relative;
+		min-height: var(--header-height);
 	}
 	&__logo {
 		&:not(:hover, :focus) {
@@ -30,7 +35,10 @@
 
 		a {
 			display: block;
+			font-family: var(--fontFamilyHeading);
 			padding: 0.25em 0;
+			text-transform: uppercase;
+			text-decoration: none;
 		}
 	}
 }
