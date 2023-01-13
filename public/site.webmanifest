@@ -3,8 +3,6 @@
 	"dir": "ltr",
 	"name": "Pete Lambert Music",
 	"short_name": "Pete Lambert",
-	"theme_color": "#1a1a1a",
-	"background_color": "#1a1a1a",
 	"start_url": "/index.html",
 	"display": "standalone",
 	"orientation": "natural",
