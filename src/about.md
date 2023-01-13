@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 2
 ---
 
-{% image "./src/assets/images/bio-image-1.webp", "Pete Lambert wistfully staring into the middle distance whilst playing guitar", "631px, 420px", "photo" %}
+{% image "./src/assets/images/bio-image-1.webp", "Pete Lambert wistfully staring into the middle distance whilst playing guitar", "1262, 840", "photo" %}
 
 Pete Lambert is a singer-songwriter from York, UK. Taking influences from Folk, Americana and Country music, he sings songs about heartbreak, longing and whiskey.
 
