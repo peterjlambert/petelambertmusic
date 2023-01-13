@@ -1,6 +1,6 @@
-<footer class="site-footer" role="contentinfo">
-    <div class="site-footer__inner container container--constrained">
-
+<footer class="site-footer" role="contentinfo" id="contact">
+    <section class="site-footer__inner container container--constrained">
+        <h1>Get in touch</h1>
         <div class="footer-contacts">
             <div class="footer-contacts__item">
                 <h3 class="footer-contacts__title">Booking</h3>
@@ -18,7 +18,18 @@
                 <a href="mailto:pete@petelambertmusic.com">pete@whiskeysadnessheartbreak.com</a>
             </div>
         </div>
+
+        <div class="container">
+            <div class="container__content mailing-list">
+                <a href="https://petelambertmusic.substack.com/" class="button">Join the mailing list</a>
+            </div>
+
+        <div class="container">
+            <div class="container__content">
+                {% include 'social-icons.njk' %}
+            </div>
+        </div>
         <p class="site-footer__copyright">&copy;{{ build.timestamp | dateToFormat('yyyy') }} Pete Lambert</p>
         
-    </div>
+    </section>
 </footer>

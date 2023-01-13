@@ -1,16 +1,24 @@
 ---
 layout: base
 ---
-
-<article>
-    <div class="container hero " id="hero">
-        <heading class="container__content">
-            <h1>{{ title }}</h1>
-        </heading>
-    </div>    
+<article> 
     <div class="container">
         <div class="container__content">
-            {{ content | safe }}
+            <article class="show">
+                <h2>
+                    {% if soldout %}
+                        <span class="show__soldout">Sold Out - </span>
+                    {% endif %}
+                    {{ title }}
+                </h2>
+                {% if subtitle %}
+                    <h3>{{ subtitle }}</h3>
+                {% endif %}
+                <time class="show__time" datetime="{{ page.date | dateToFormat('yyyy-MM-dd t') }}">{{ page.date | dateToFormat('dd LLL yyyy') }} &middot; {{ page.date | dateToFormat('t') }}</time>
+                {{ content | safe }}
+                {% if tickets and not soldout %}
+                    <div><a href="{{ tickets }}" class="button button--primary">Buy Tickets</a></div>
+                {% endif %}
+            </article>
         </div>
-    </div>
 </article>

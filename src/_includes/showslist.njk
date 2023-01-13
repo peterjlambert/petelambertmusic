@@ -1,12 +1,17 @@
-<ol reversed class="postlist">
-{% for show in showslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ show.url | url }}" class="postlist-link"><h2>{% if show.data.title %}{{ show.data.title }}{% else %}<code>{{ show.url }}</code>{% endif %}</h2></a>
-    <time class="postlist-date" datetime="{{ show.date | dateToFormat('yyyy-MM-dd') }}">{{ show.date | dateToFormat('dd LLL yyyy') }}</time>
-    {% for tag in show.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {% endfor %}
-  </li>
-{% endfor %}
-</ol>
+{% if collections.futureShows | length > 0 %}
+  {% for show in collections.futureShows %}
+      <article class="showlist__item">
+        <a href="{{ show.url }}" class="postlist-link"><h2 class="showlist__title">{{ show.data.title }}</h2></a>
+        <time 
+          class="show__time" 
+          datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
+          >
+          {{ show.date | dateToFormat('dd LLL yyyy') }} &middot; {{ show.date | dateToFormat('t') }}
+        </time>
+      </article>
+  {% endfor %}
+{% else %}
+  <div class="no-shows">
+    <p>There are no upcoming shows to announce at the moment. <br>Check back later for good stuff.</p>
+  </div>
+{% endif %}

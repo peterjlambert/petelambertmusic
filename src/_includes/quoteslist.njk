@@ -1,0 +1,13 @@
+{% for quote in collections.quotes %}
+<figure class="quote">
+  <blockquote class="quote__block">
+    {{ quote.data.quote }}<span>”</span>
+  </blockquote>
+  {% if quote.data.link %}
+    <figcaption class="quote__source">&mdash; <a href="{{ quote.data.link }}">{{ quote.data.source }}</a></figcaption>
+  {% else %}
+    <figcaption class="quote__source">&mdash; {{ quote.data.source }}</figcaption>
+  {% endif %}
+</figure>
+{% endfor %}
+

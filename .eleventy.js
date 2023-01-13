@@ -5,6 +5,10 @@ const EleventyPluginNavigation = require('@11ty/eleventy-navigation')
 const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyPluginSyntaxhighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
+const embedSpotify = require('eleventy-plugin-embed-spotify')
+const {
+	fortawesomeBrandsPlugin
+} = require('@vidhill/fortawesome-brands-11ty-shortcode')
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -17,6 +21,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('public')
 
 	// Plugins
+	eleventyConfig.addPlugin(embedSpotify)
 	eleventyConfig.addPlugin(EleventyPluginNavigation)
 	eleventyConfig.addPlugin(EleventyPluginRss)
 	eleventyConfig.addPlugin(EleventyPluginSyntaxhighlight)
@@ -57,6 +62,16 @@ module.exports = function (eleventyConfig) {
 	})
 
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
+	eleventyConfig.addPlugin(fortawesomeBrandsPlugin)
+
+	// Collections
+	eleventyConfig.addCollection('futureShows', function (collectionApi) {
+		return collectionApi.getFilteredByTag('shows').filter((p) => {
+			let now = new Date().getTime()
+			if (now > p.date.getTime()) return false
+			return true
+		})
+	})
 
 	// Customize Markdown library and settings:
 	let markdownLibrary = markdownIt({

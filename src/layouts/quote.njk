@@ -1,0 +1,13 @@
+---
+layout: base
+---
+<figure class="quote">
+  <blockquote class="quote__block">
+    {{ quote }}<span>”</span>
+  </blockquote>
+  {% if link %}
+    <figcaption class="quote__source">&mdash; <a href="{{ link }}">{{ source }}</a></figcaption>
+  {% else %}
+    <figcaption class="quote__source">&mdash; {{ source }}</figcaption>
+  {% endif %}
+</figure>

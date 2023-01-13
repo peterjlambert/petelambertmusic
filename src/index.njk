@@ -1,17 +1,14 @@
 ---
 layout: base
-eleventyNavigation:
-  key: Home
-  order: 1
 ---
 
 <div class="container hero hero--homepage" id="hero">
   <section class="hero__content">
-    <img src="/assets/images/things_cover.png" alt="Album Art: The Things I Think by Pete Lambert. A man sat on a chair playing guitar in a wasteland." class="hero__art">
+    <a href="https://open.spotify.com/track/44yFoN2Zx34JuQZDFCt2Zq?si=3e078b87263241e3">
+      <img src="/assets/images/things_cover.png" alt="Album Art: The Things I Think by Pete Lambert. A man sat on a chair playing guitar in a wasteland." class="hero__art">
+    </a>
     <div class="hero__text">
-      <h1 class="title">The Things I Think</h1>
-      <p>The new single by Pete Lambert</p>
-      <a href="https://petelambert.bandcamp.com/album/the-things-i-think" class="button">Listen Now</a>
+      <p><a href="https://open.spotify.com/track/44yFoN2Zx34JuQZDFCt2Zq?si=3e078b87263241e3" class="button">Listen Now</a></p>
     </div>
   </section>
 </div>
@@ -30,46 +27,13 @@ eleventyNavigation:
 <div class="container container--2" id="press">
   <section class="container__content">
     <h1 class="title">Press for Pete Lambert</h1>
-    <figure class="quote">
-      <blockquote class="quote__block">
-        ‘The Things I Think’ is a folk classic song in the making. We adore the stunning vocal performances, brilliant guitar work and relatable lyrics. This a release you do not want to miss!<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— FV Music Blog</figcaption>
-    </figure>
+    {% include "quoteslist.njk" %}
+  </section>
+</div>
 
-    <figure class="quote">
-      <blockquote class="quote__block">
-        [The Things I Think is] very poignant. Quite lovely too.<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— Jericho Keys - BBC Introducing</figcaption>
-    </figure>
-
-    <figure class="quote">
-      <blockquote class="quote__block">
-        Pete lays it all out there with his lyrics and we get just the right amount of light and dark<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— York Calling</figcaption>
-    </figure>
-
-    <figure class="quote">
-      <blockquote class="quote__block">
-        Pete lays it all out there with his lyrics and we get just the right amount of light and dark<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— York Calling</figcaption>
-    </figure>
-
-    <figure class="quote">
-      <blockquote class="quote__block">
-        Beautiful, that<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— Richard Hardcastle - Dickie &amp; Dan's Americana Show</figcaption>
-    </figure>
-
-    <figure class="quote">
-      <blockquote class="quote__block">
-        ‘The Things I Think’ is a folk classic song in the making. We adore the stunning vocal performances, brilliant guitar work and relatable lyrics. This a release you do not want to miss!<span>”</span>
-      </blockquote>
-      <figcaption class="quote__source">— Various Small Flames</figcaption>
-    </figure>
+<div class="container container" id="press">
+  <section class="container__content">
+    <h1 class="title">Upcoming Shows</h1>
+    {% include "showslist.njk" %}
   </section>
 </div>

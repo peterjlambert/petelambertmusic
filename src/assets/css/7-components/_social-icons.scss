@@ -1,0 +1,14 @@
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.social-icon {
+	width: 2rem;
+	height: 2rem;
+	&:hover {
+		transform: scale(1.1);
+	}
+}

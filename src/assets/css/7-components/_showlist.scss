@@ -1,0 +1,39 @@
+.showlist {
+	ol[class] {
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+}
+
+.showlist {
+	text-align: center;
+}
+
+.showlist-item {
+	border-top: 1px solid var(--borderColor);
+	padding-bottom: 2rem;
+}
+
+.showlist__title {
+	font-size: var(--fluid-1);
+}
+
+.showlist__item:has(a + time) h2 {
+	margin-bottom: 1rem;
+}
+
+.no-shows {
+	text-align: center;
+}
+
+.show__soldout {
+	color: var(--primaryColor);
+	text-transform: uppercase;
+}
+
+.show__time {
+	display: block;
+	text-align: center;
+}

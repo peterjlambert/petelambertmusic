@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<div class="container" id="bio">
+  <section class="container__content">
+    <h1 class="container__title">{{ title }}</h1>
+    {{ content | safe}}
+  </section>
+</div>
+<div class="container container--2" id="press">
+  <section class="container__content">
+    <h1 class="container__title">Press</h1>
+    {% include "quoteslist.njk" %}
+  </section>
+</div>
+

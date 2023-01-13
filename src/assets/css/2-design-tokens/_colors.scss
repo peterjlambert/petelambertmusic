@@ -1,6 +1,8 @@
 :root {
 	--backgroundColor: #ececec;
 	--backgroundColor2: #e0e0e0;
+	--backgroundColor3: rgba(0, 0, 0, 0.05);
+	--borderColor: rgba(0, 0, 0, 0.1);
 	--textColor: #1a1a1a;
 	--primaryColor: #b9594d;
 	--focusColor: #b9594d;
@@ -15,6 +17,8 @@
 	:root:not([data-user-color-scheme]) {
 		--backgroundColor: #1a1a1a;
 		--backgroundColor2: #1f1f1f;
+		--backgroundColor3: rgba(0, 0, 0, 0.5);
+		--borderColor: rgba(255, 255, 255, 0.1);
 		--textColor: #eeeeee;
 		--primaryColor: #b9594d;
 	}

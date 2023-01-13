@@ -5,14 +5,10 @@ eleventyNavigation:
   key: Shows
   order: 3
 ---
-<div class="container hero hero--homepage" id="hero">
-  <heading class="container__content">
-    <h1>Upcoming Shows</h1>
-  </heading>
-</div>
 
 <div class="container">
   <section class="container__content">
+    <h1 class="container__title">Upcoming Shows</h1>
     {% set showslist = collections.shows %}
     {% include "showslist.njk" %}
   </section>
