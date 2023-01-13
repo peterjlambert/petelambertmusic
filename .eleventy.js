@@ -16,6 +16,28 @@ const shortcodes = require('./utils/shortcodes.js')
 
 const { resolve } = require('path')
 
+const Image = require('@11ty/eleventy-img')
+
+async function imageShortcode(src, alt, sizes, cls) {
+	let metadata = await Image(src, {
+		widths: [300, 600, 900, 1500],
+		formats: ['avif', 'webp', 'jpeg'],
+		urlPath: '/assets/images/',
+		outputDir: './src/assets/images'
+	})
+
+	let imageAttributes = {
+		alt,
+		sizes,
+		class: cls,
+		loading: 'lazy',
+		decoding: 'async'
+	}
+
+	// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+	return Image.generateHTML(metadata, imageAttributes)
+}
+
 module.exports = function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior('copy')
 	eleventyConfig.addPassthroughCopy('public')
@@ -61,6 +83,7 @@ module.exports = function (eleventyConfig) {
 		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
 	})
 
+	eleventyConfig.addAsyncShortcode('image', imageShortcode)
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 	eleventyConfig.addPlugin(fortawesomeBrandsPlugin)
 
@@ -96,6 +119,7 @@ module.exports = function (eleventyConfig) {
 	// Copy/pass-through files
 	eleventyConfig.addPassthroughCopy('src/assets/css')
 	eleventyConfig.addPassthroughCopy('src/assets/js')
+	eleventyConfig.addPassthroughCopy('src/assets/images')
 
 	return {
 		templateFormats: ['md', 'njk', 'html', 'liquid'],
