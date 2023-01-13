@@ -3,20 +3,21 @@
 }
 
 .quote__source {
-	font-size: var(--fluid-0);
 	font-family: var(--fontFamilyHeading);
+	font-size: var(--fluid-0);
 	font-weight: 100;
 }
 
 .quote__block {
 	border-left: 0.25rem solid var(--primaryColor);
-	padding-left: 1rem;
+	font-family: var(--fontFamilyQuote);
+	font-size: var(--fluid-0);
+	font-style: italic;
+	margin-bottom: 1rem;
 	margin-left: 0;
 	margin-right: 0;
-	margin-bottom: 1rem;
 	margin-top: 1rem;
-	font-style: italic;
-	font-size: var(--fluid-0);
+	padding-left: 1rem;
 	p {
 		margin-bottom: 0;
 	}

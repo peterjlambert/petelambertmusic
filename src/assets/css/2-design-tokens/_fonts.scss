@@ -3,15 +3,9 @@
 :root {
 	--fontFamilyHeading: 'Sofia Sans Condensed', serif;
 	--fontFamilyBody: 'Sofia Sans', system-ui, sans-serif;
-	--fontFamilyQuote: '' Frank Ruhl Libre '', serif;
+	--fontFamilyQuote: 'Frank Ruhl Libre', serif;
 }
 
 body {
-	font-family: sans-serif;
-}
-.fonts-loaded-1 body {
-	font-family: var(--fontFamilyBody);
-}
-.fonts-loaded-2 body {
 	font-family: var(--fontFamilyBody);
 }
