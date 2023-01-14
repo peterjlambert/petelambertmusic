@@ -10,6 +10,9 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
+		@supports (-webkit-touch-callout: none) {
+			background-attachment: scroll;
+		}
 	}
 	.hero__content {
 		align-items: center;
