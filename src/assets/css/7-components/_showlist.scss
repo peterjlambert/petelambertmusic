@@ -7,13 +7,10 @@
 	}
 }
 
-.showlist {
-	text-align: center;
-}
-
-.showlist-item {
+.showlist__item {
 	border-top: 1px solid var(--borderColor);
 	padding-bottom: 2rem;
+	text-align: center;
 }
 
 .showlist__title {
@@ -39,5 +36,5 @@
 }
 
 .show__tickets {
-  text-align: center;
-} 
+	text-align: center;
+}

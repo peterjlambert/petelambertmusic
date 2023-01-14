@@ -1,7 +1,10 @@
 {% if collections.futureShows | length > 0 %}
   {% for show in collections.futureShows %}
       <article class="showlist__item">
-        <a href="{{ show.url }}" class="postlist-link"><h2 class="showlist__title">{{ show.data.title }}</h2></a>
+        <h2 class="showlist__title">
+          <a href="{{ show.url }}" class="postlist-link">{{ show.data.title }}</a>
+        </h2>
+        {% if show.data.subtitle %}<p class="showlist__subtitle">{{show.data.subtitle}}</p>{% endif %}
         <time 
           class="show__time" 
           datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
