@@ -49,8 +49,9 @@
 
 	&__art {
 		border: 0.5rem solid #fff;
-		aspect-ratio: 1 / 1;
-		max-width: 640px;
+		aspect-ratio: 1;
+		max-width: 100%;
+		width: 640px;
 		width: 100%;
 	}
 }
