@@ -36,6 +36,7 @@ const imageShortcode = async (
 	const imageAttributes = {
 		alt,
 		sizes,
+		class: className,
 		loading: 'lazy',
 		decoding: 'async'
 	}
