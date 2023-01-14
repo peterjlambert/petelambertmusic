@@ -18,24 +18,29 @@ const { resolve } = require('path')
 
 const Image = require('@11ty/eleventy-img')
 
-async function imageShortcode(src, alt, sizes, cls) {
-	let metadata = await Image(src, {
-		widths: [320, 640, 900, 1500],
-		formats: ['avif', 'webp', 'jpeg'],
-		urlPath: '/assets/images/',
-		outputDir: './src/assets/images'
+const imageShortcode = async (
+	src,
+	alt,
+	className = undefined,
+	widths = [400, 800, 1280],
+	formats = ['avif', 'webp', 'jpeg'],
+	sizes = '100vw'
+) => {
+	const imageMetadata = await Image(src, {
+		widths: [...widths, null],
+		formats: [...formats, null],
+		outputDir: './src/assets/images',
+		urlPath: '/assets/images/'
 	})
 
-	let imageAttributes = {
+	const imageAttributes = {
 		alt,
 		sizes,
-		class: cls,
 		loading: 'lazy',
 		decoding: 'async'
 	}
 
-	// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-	return Image.generateHTML(metadata, imageAttributes)
+	return Image.generateHTML(imageMetadata, imageAttributes)
 }
 
 module.exports = function (eleventyConfig) {
