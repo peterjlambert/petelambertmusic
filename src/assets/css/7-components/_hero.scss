@@ -1,7 +1,7 @@
 .hero {
 	background-color: var(--primaryColor);
 	color: var(--textColor);
-	height: calc(100vh - var(--headerHeight));
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	&--homepage {
