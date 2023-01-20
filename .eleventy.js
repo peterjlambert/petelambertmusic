@@ -93,15 +93,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 	eleventyConfig.addPlugin(fortawesomeBrandsPlugin)
 
-	// Collections
-	eleventyConfig.addCollection('futureShows', function (collectionApi) {
-		return collectionApi.getFilteredByTag('shows').filter((p) => {
-			let now = new Date().getTime()
-			if (now > p.date.getTime()) return false
-			return true
-		})
-	})
-
 	// Customize Markdown library and settings:
 	let markdownLibrary = markdownIt({
 		html: true,

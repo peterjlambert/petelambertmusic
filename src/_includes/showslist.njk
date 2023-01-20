@@ -1,15 +1,15 @@
-{% if collections.futureShows | length > 0 %}
-  {% for show in collections.futureShows %}
+{% if shows | length > 0 %}
+  {% for show in shows %}
       <article class="showlist__item">
         <h2 class="showlist__title">
-          <a href="{{ show.url }}" class="postlist-link">{{ show.data.title }}</a>
+          <a href="{{ show.slug }}" class="postlist-link">{{ show.title }}</a>
         </h2>
-        {% if show.data.subtitle %}<p class="showlist__subtitle">{{show.data.subtitle}}</p>{% endif %}
+        {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
         <time 
           class="show__time" 
           datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
           >
-          {{ show.date | dateToFormat('dd LLL yyyy') }} &middot; {{ show.date | dateToFormat('t') }}
+          {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
         </time>
       </article>
   {% endfor %}
