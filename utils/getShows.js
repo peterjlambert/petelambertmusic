@@ -12,25 +12,8 @@ function generatePost(post) {
 async function getShows() {
 	const filter = groq`*[_type == "show" && date > now()]`
 	const projection = groq`{
-    _id,
-    date,
-    title,
-    subtitle,
-    link,
-    soldout,
-    upcoming,
-    body[]{
-      ...,
-      children[]{
-        ...,
-        // Join inline reference
-        _type == "authorReference" => {
-          // check /studio/documents/authors.js for more fields
-          "name": @.author->name,
-          "slug": @.author->slug
-        }
-      }
-    }
+    ...,
+    'slug': slug.current,
   }`
 	const order = `| order(date asc)`
 	const query = [filter, projection, order].join(' ')
