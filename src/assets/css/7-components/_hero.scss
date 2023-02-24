@@ -27,6 +27,7 @@
 		width: 100%;
 		h1 {
 			font-size: 3rem;
+			font-weight: bold;
 			margin: 0;
 		}
 		p {
@@ -34,7 +35,9 @@
 			margin: 0;
 		}
 	}
-
+	&__title {
+		font-weight: bold;
+	}
 	&__text {
 		background-color: rgba(0, 0, 0, 0.5);
 		display: flex;
@@ -42,8 +45,10 @@
 		gap: 1rem;
 		color: #fff;
 		padding: 1rem;
+		width: 100%;
 		h1 {
 			line-height: 1;
+			font-weight: bold;
 		}
 	}
 
@@ -52,5 +57,9 @@
 		aspect-ratio: 1;
 		max-width: 100%;
 		width: 640px;
+	}
+	&__presave {
+		justify-self: center;
+		align-self: center;
 	}
 }
