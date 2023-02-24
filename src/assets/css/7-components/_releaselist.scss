@@ -1,0 +1,38 @@
+.releases {
+	padding-top: 4rem;
+}
+.release__item {
+	display: grid;
+	grid-template-columns: minmax(320px, 30%) 1fr;
+	gap: 4rem;
+	@media screen and (max-width: 900px) {
+		grid-template-columns: 1fr;
+	}
+	+ .release__item {
+		margin-top: 8rem;
+	}
+}
+
+.release__title {
+	font-size: var(--fluid-2);
+	font-weight: bold;
+	text-align: left;
+	margin-top: 0;
+}
+
+.release__date,
+.release__subtitle {
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	font-size: var(--fluid-0);
+	font-weight: bold;
+}
+
+.release__linklist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.release__spotify {
+	margin-bottom: 1rem;
+}

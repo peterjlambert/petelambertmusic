@@ -1,0 +1,63 @@
+
+{% if releases | length > 0 %}
+  {% for release in releases | reverse %}
+      <article class="release__item">
+        <div>
+          <img 
+            class="release__image" 
+            src="{%  imageUrlFor release.artwork, 900  %}" 
+            alt="{{ release.title }} Cover Art"
+            >
+        </div>
+        <div>
+          <h2 class="release__title">
+            {{ release.title }}
+          </h2>
+          {% if release.spotifyEmbedUrl %}
+            <div class="release__spotify">
+              <iframe style="border-radius:12px" src="{{ release.spotifyEmbedUrl }}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </iframe>
+            </div>
+          {% endif %}
+
+          {% if release.subtitle %}<p class="release__subtitle">{{release.subtitle}}</p>{% endif %}
+          <div class="releaselist__description">
+            {{ release.body | markdownify | safe}}
+          </div>
+          {% if release.presaveLink %}
+            <a 
+              class="button release__presave" 
+              href="{{ release.presaveLink }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              >
+              Pre-save on Spotify
+            </a>
+          {% endif %}
+          
+          <div class="release__links">
+            {% if release.links %}
+              <ul class="release__linklist">
+                {% for link in release.links %}
+                  <li>
+                    <a 
+                      class="release__link" 
+                      href="{{ link.url }}" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      >
+                      {{ link.label }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+  {% endfor %}
+{% else %}
+  <div class="no-releases">
+    <p>Stay tuned. Good stuff is coming.</p>
+  </div>
+{% endif %}

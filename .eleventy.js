@@ -6,6 +6,9 @@ const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyPluginSyntaxhighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
 const embedSpotify = require('eleventy-plugin-embed-spotify')
+const sanityImage = require('eleventy-plugin-sanity-image')
+const sanityClient = require('./utils/sanityClient.js')
+
 const {
 	fortawesomeBrandsPlugin
 } = require('@vidhill/fortawesome-brands-11ty-shortcode')
@@ -78,6 +81,14 @@ module.exports = function (eleventyConfig) {
 	Object.keys(filters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, filters[filterName])
 	})
+	const md = require('markdown-it')({
+		html: false,
+		breaks: true,
+		linkify: true
+	})
+	eleventyConfig.addNunjucksFilter('markdownify', (markdownString) =>
+		md.render(markdownString)
+	)
 
 	// Transforms
 	Object.keys(transforms).forEach((transformName) => {
@@ -92,6 +103,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addAsyncShortcode('image', imageShortcode)
 	eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 	eleventyConfig.addPlugin(fortawesomeBrandsPlugin)
+	eleventyConfig.addPlugin(sanityImage, {
+		client: sanityClient // This is your Sanity connection object
+	})
 
 	// Customize Markdown library and settings:
 	let markdownLibrary = markdownIt({
@@ -112,6 +126,7 @@ module.exports = function (eleventyConfig) {
 	// Layouts
 	eleventyConfig.addLayoutAlias('base', 'base.njk')
 	eleventyConfig.addLayoutAlias('show', 'show.njk')
+	eleventyConfig.addLayoutAlias('release', 'release.njk')
 
 	// Copy/pass-through files
 	eleventyConfig.addPassthroughCopy('src/assets/css')

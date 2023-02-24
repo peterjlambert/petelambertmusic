@@ -1,0 +1,18 @@
+---
+layout: base
+permalink: /music/
+eleventyNavigation:
+  key: Music
+  order: 3
+---
+
+<div class="container">
+  <section class="container__content container__content--wide">
+    <h1 class="container__title">Music</h1>
+    <div class="releases">
+      {% set releaseslist = collections.releases %}
+      {% include "releaselist.njk" %}
+    </div>
+  </section>
+</div>
+

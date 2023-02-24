@@ -1,0 +1,57 @@
+---
+layout: page
+pagination:
+    data: releases
+    size: 1
+    alias: release
+permalink: /music/{{ release.slug }}
+---
+<article> 
+    <div class="container">
+        <div class="container__content container__content--wide">
+            <article class="release__item">
+                <div>
+                    <img 
+                        class="release__image" 
+                        src="{%  imageUrlFor release.artwork, 900  %}" 
+                        alt="{{ release.title }} Cover Art"
+                        >
+                    </div>
+                    <div>
+                    <h2 class="release__title">
+                        {{ release.title }}
+                    </h2>
+                    {% if release.subtitle %}<p class="releaselist__subtitle">{{release.subtitle}}</p>{% endif %}
+                    <time 
+                        class="release__date" 
+                        datetime="{{ release.date | dateToFormat('yyyy-MM-dd') }}"
+                        >
+                        {% if release.outnow %}Release Date: {% else %}Coming Soon: {% endif %}
+                        {{ release.date | readableDate }}
+                    </time>
+                    <div class="releaselist__description">
+                        
+                        {{ release.body | markdownify | safe}}
+                    </div>
+                    <div class="releaselist__links">
+                        {% if release.links %}
+                            <ul class="releaselist__linkslist">
+                                {% for link in release.links %}
+                                    <li class="releaselist__linkslistitem">
+                                        <a 
+                                        class="releaselist__link" 
+                                        href="{{ link.url }}" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        >
+                                        {{ link.label }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+        </div>
+</article>
