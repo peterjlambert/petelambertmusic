@@ -2,7 +2,17 @@
   {% for show in shows %}
       <article class="showlist__item">
         <h2 class="showlist__title">
-          <a href="{{ show.slug }}" class="postlist-link">{{ show.title }}</a>
+          {{ show.title }}
+          {% if show.tickets %}
+            <a 
+              class="showlist__tickets" 
+              href="{{ show.tickets }}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              >
+              Tickets
+            </a>
+          {% endif %}
         </h2>
         {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
         <time 
