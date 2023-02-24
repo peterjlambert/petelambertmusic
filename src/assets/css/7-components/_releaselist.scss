@@ -13,6 +13,11 @@
 	}
 }
 
+.release__image {
+	border: 0.5rem solid #fff;
+	box-shadow: 0.25rem 0.25rem 0.75rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
 .release__title {
 	font-size: var(--fluid-2);
 	font-weight: bold;
