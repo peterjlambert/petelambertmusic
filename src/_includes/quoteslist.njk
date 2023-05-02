@@ -1,13 +1,18 @@
-{% for quote in collections.quotes %}
-<figure class="quote">
-  <blockquote class="quote__block">
-    {{ quote.data.quote }}<span>”</span>
-  </blockquote>
-  {% if quote.data.link %}
-    <figcaption class="quote__source">&mdash; <a href="{{ quote.data.link }}">{{ quote.data.source }}</a></figcaption>
-  {% else %}
-    <figcaption class="quote__source">&mdash; {{ quote.data.source }}</figcaption>
-  {% endif %}
-</figure>
-{% endfor %}
+
+{% if quotes | length > 0 %}
+  {% for quote in quotes | reverse %}
+    <figure class="quote">
+      <blockquote class="quote__block">
+        <span>“</span>{{ quote.quote }}<span>”</span>
+      </blockquote>
+      {% if quote.link %}
+        <figcaption class="quote__source">&mdash; <a href="{{ quote.link }}">{{ quote.source }}</a></figcaption>
+      {% else %}
+        <figcaption class="quote__source">&mdash; {{ quote.source }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endfor %}
+{% else %}
+  <p>There are no quotes yet.</p>
+{% endif %}
 
