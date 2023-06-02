@@ -127,6 +127,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addLayoutAlias('base', 'base.njk')
 	eleventyConfig.addLayoutAlias('show', 'show.njk')
 	eleventyConfig.addLayoutAlias('release', 'release.njk')
+	eleventyConfig.addLayoutAlias('photo', 'photo.njk')
 
 	// Copy/pass-through files
 	eleventyConfig.addPassthroughCopy('src/assets/css')

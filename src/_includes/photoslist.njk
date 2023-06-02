@@ -1,0 +1,18 @@
+
+<ul class="photoGallery">
+
+{%- for item in pagination.items %}
+    <li class="photoGallery__item">
+        <a href="/photos/{{item.slug}}/">
+          <img 
+                    class="photo__image" 
+                    src="{{  item.imageUrl }}" 
+                    alt="{{ item.alt }}"
+                    loading="lazy"
+                    >
+        </a>
+        <p>{{ item.caption }}</p>
+    </li>
+{%- endfor %}
+
+</ul>

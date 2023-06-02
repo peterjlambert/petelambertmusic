@@ -1,0 +1,19 @@
+---
+layout: photo
+permalink: /photos/{{ photo.slug }}/index.html
+pagination:
+    data: photos
+    size: 1
+    alias: photo
+---
+<article class="photoGallery__item">
+    <div>
+        <img 
+        class="photo__image" 
+        src="{{  photo.imageUrl }}" 
+        alt="{{ photo.alt }}"
+        loading="lazy"
+        >
+        {{ photo.caption }}
+    </div>
+</article>

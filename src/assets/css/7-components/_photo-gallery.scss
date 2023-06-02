@@ -1,0 +1,21 @@
+.photoGallery {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+.photoGallery__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	p:empty {
+		display: none;
+	}
+}
