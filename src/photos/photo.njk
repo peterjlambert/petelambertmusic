@@ -8,12 +8,7 @@ pagination:
 ---
 <article class="photoGallery__item">
     <div>
-        <img 
-        class="photo__image" 
-        src="{{  photo.imageUrl }}" 
-        alt="{{ photo.alt }}"
-        loading="lazy"
-        >
+        {% image item.imageUrl, item.alt, "photo__image" %}
         {{ photo.caption }}
     </div>
 </article>
