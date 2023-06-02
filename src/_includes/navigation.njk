@@ -1,16 +1,24 @@
-<nav class="nav nav--primary" role="navigation" tabindex="-1">
-    {# Nav Links  #}
-    <ul class="nav__menu">
-        {%- for item in collections.all | eleventyNavigation -%}
-            {%- if item.url -%}
-                {%- set isCurrent = (item.url == page.url) -%}
-                {%- set isParent = item.url != '/' and item.url in page.url -%}
-                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
-                    <a class="nav__link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}>
-                        {{ item.title }}
-                    </a>
-                </li>
-            {%- endif -%}
-        {%- endfor -%}
-    </ul>
-</nav>
+<label class="nav__toggle" for="nav-toggle">
+    <input type="checkbox" id="nav-toggle" class="nav__toggle__input visually-hidden" />
+    <div class="nav__toggle__button nav__link">
+        <span class="nav__toggle__icon"></span>
+        <span class="nav__toggle__text">Menu</span>
+    </div>
+
+    <nav class="nav nav--primary" role="navigation" >
+        {# Nav Links  #}
+        <ul class="nav__menu">
+            {%- for item in collections.all | eleventyNavigation -%}
+                {%- if item.url -%}
+                    {%- set isCurrent = (item.url == page.url) -%}
+                    {%- set isParent = item.url != '/' and item.url in page.url -%}
+                    <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                        <a class="nav__link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if isCurrent %} aria-current="page" {% endif %}>
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </nav>
+</label>
