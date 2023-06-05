@@ -10,7 +10,7 @@ function generatePost(post) {
 }
 
 async function getShows() {
-	const filter = groq`*[_type == "show" && date > now() && display == true]`
+	const filter = groq`*[_type == "show" && date > now() && published==true]`
 	const projection = groq`{
     ...,
     'slug': slug.current,

@@ -11,7 +11,7 @@ function generatePost(post) {
 }
 
 async function getReleases() {
-	const filter = groq`*[_type == "release"]`
+	const filter = groq`*[_type == "release" && published==true]`
 	const projection = groq`{
     ...,
     'slug': slug.current,

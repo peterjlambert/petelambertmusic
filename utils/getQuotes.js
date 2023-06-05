@@ -10,7 +10,7 @@ function generateEntry(entry) {
 }
 
 async function getQuotes() {
-	const filter = groq`*[_type == "quote" && display==true]`
+	const filter = groq`*[_type == "quote" && published==true]`
 	const projection = groq`{
     ...
   }`

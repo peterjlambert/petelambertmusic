@@ -19,7 +19,7 @@ function generateImageData({ galleryImage, date, slug }) {
 
 async function getPhotos() {
 	// Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-	const filter = groq`*[_type == "galleryImageHolder"]`
+	const filter = groq`*[_type == "galleryImageHolder" && published==true]`
 	const projection = groq`{
     galleryImage,
     date,
