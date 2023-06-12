@@ -1,5 +1,10 @@
 .releases {
 	padding-top: 4rem;
+	h3,
+	h4,
+	h5 {
+		text-align: left;
+	}
 }
 .release__item {
 	display: grid;
@@ -37,6 +42,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
+	margin-top: 2rem;
 }
 .release__spotify {
 	margin-bottom: 1rem;
