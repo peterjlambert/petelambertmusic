@@ -1,5 +1,10 @@
 ---
 layout: base
+permalink: /shows/{{ show.slug }}/index.html
+pagination:
+    data: shows
+    size: 1
+    alias: show
 ---
 <article> 
     <div class="container">
@@ -16,8 +21,8 @@ layout: base
                 {% endif %}
                 <time class="show__time" datetime="{{ page.date | dateToFormat('yyyy-MM-dd t') }}">{{ page.date | dateToFormat('dd LLL yyyy') }} &middot; {{ page.date | dateToFormat('t') }}</time>
                 {{ content | safe }}
-                {% if tickets and not soldout %}
-                    <div class="show__tickets"><a href="{{ tickets }}" class="button button--primary">Buy Tickets</a></div>
+                {% if url and not soldout %}
+                    <div class="show__tickets"><a href="{{ urk }}" class="button button--primary">Buy Tickets</a></div>
                 {% endif %}
             </article>
         </div>

@@ -1,13 +1,13 @@
 a {
 	color: var(--primaryColor);
-	text-decoration: underline;
+	text-decoration: none;
 	text-underline-offset: 0.2em;
 	text-decoration-color: var(--textColor);
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
 		color: var(--textColor);
-		text-decoration-color: var(--focusColor);
+		text-decoration: underline;
 		text-decoration-color: var(--textColor);
 	}
 	svg {

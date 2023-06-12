@@ -15,6 +15,7 @@
 
 .showlist__title {
 	font-size: var(--fluid-1);
+	margin-bottom: 0;
 }
 
 .showlist__item:has(a + time) h2 {
@@ -33,8 +34,20 @@
 .show__time {
 	display: block;
 	text-align: center;
+	margin-bottom: 0.5rem;
 }
 
 .show__tickets {
+	background-color: var(--primaryColor);
+	border-radius: 0.25rem;
+	color: #fff;
+	display: inline-flex;
+	padding: 0.25rem;
+	font-size: var(--fluid-0);
+	text-transform: uppercase;
 	text-align: center;
+	text-decoration: none;
+	&:hover {
+		background-color: var(--focusColor);
+	}
 }

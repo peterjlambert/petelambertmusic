@@ -1,7 +1,15 @@
-
-{% if releases | length > 0 %}
-  {% for release in releases | reverse %}
-      <article class="release__item">
+---
+layout: release
+permalink: /music/{{ release.slug }}/index.html
+pagination:
+    data: releases
+    size: 1
+    alias: release
+---
+<div> 
+    <div class="container">
+        <div class="container__content container__content--wide">
+            <article class="release__item">
         <div>
           <img 
             class="release__image" 
@@ -55,9 +63,5 @@
           </div>
         </div>
       </article>
-  {% endfor %}
-{% else %}
-  <div class="no-releases">
-    <p>Stay tuned. Good stuff is coming.</p>
-  </div>
-{% endif %}
+        </div>
+</div>
