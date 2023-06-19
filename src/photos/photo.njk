@@ -9,7 +9,6 @@ pagination:
 <article class="photoGallery__item">
     <div>
         {% image photo.imageUrl, photo.alt, "photo__image" %}
-        {{ photo.caption }}
-        <p class="photoGallery__caption">{{ item.caption }} – <a href="{{photo.imageUrl}}" class="photo__link" target="_blank" rel="noopener noreferrer">Download full size</a></p>
+        <p class="photoGallery__caption">{{ photo.caption }} – <a href="{{photo.imageUrl}}" class="photo__link" target="_blank" rel="noopener noreferrer">Download full size</a></p>
     </div>
 </article>
