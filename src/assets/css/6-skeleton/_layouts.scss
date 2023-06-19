@@ -17,7 +17,7 @@ body {
 	margin: 0 auto;
 	// max-width: var(--container-max-width);
 	padding: 8rem 1rem; // fallback
-	padding: 8rem clamp(var(--spacing-medium), 3.75vw, var(--spacing-x-large));
+	padding: 4rem clamp(var(--spacing-medium), 3.75vw, var(--spacing-x-large));
 	&--2 {
 		background-color: var(--backgroundColor2);
 	}
@@ -30,5 +30,8 @@ body {
 		&--wide {
 			max-width: var(--container-max-width);
 		}
+	}
+	&__title {
+		margin-top: 0;
 	}
 }
