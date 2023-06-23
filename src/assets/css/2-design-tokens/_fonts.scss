@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Sofia+Sans+Condensed:wght@200&family=Sofia+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Fjalla+One&display=swap');
 
 :root {
-	--fontFamilyHeading: 'Sofia Sans Condensed', serif;
-	--fontFamilyBody: 'Sofia Sans', system-ui, sans-serif;
-	--fontFamilyQuote: 'Frank Ruhl Libre', serif;
+	--fontFamilyHeading: 'Fjalla One', sans-serif;
+	--fontFamilyNav: 'Fjalla One', sans-serif;
+	--fontFamilyBody: 'Alice', serif;
+	--fontFamilyQuote: 'Alice', serif;
 }
 
 body {

@@ -1,12 +1,12 @@
 :root {
-	--backgroundColor: #ececec;
-	--backgroundColor2: #e0e0e0;
+	--backgroundColor: rgb(232, 223, 222);
+	--backgroundColor2: rgb(232, 223, 222);
 	--backgroundColor3: rgba(0, 0, 0, 0.05);
 	--borderColor: rgba(0, 0, 0, 0.1);
 	--textColor: #1a1a1a;
 	--textColorSecondary: #555;
-	--primaryColor: #9c4c41;
-	--focusColor: #b9594d;
+	--primaryColor: rgba(183, 90, 76, 1);
+	--focusColor: rgba(183, 90, 76, 0.8);
 }
 
 // Very basic support for a dark color scheme
