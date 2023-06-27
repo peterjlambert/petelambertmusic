@@ -2,15 +2,14 @@ h1,
 h2,
 h3 {
 	font-family: var(--fontFamilyHeading);
+	letter-spacing: 0.03em;
 	text-align: center;
 }
 
 h1 {
-	// font-size: var(--fluid-3);
-	margin-bottom: 0.5em;
-	letter-spacing: 0.02em;
-	text-transform: uppercase;
 	font-size: var(--fluid-2);
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
 }
 
 h2 {
