@@ -1,6 +1,8 @@
 ---
 layout: photo
 permalink: /photos/{{ photo.slug }}/index.html
+eleventyComputed:
+  title: "{{ photo.alt }}"
 pagination:
     data: photos
     size: 1

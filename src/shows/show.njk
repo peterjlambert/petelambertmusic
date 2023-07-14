@@ -1,6 +1,8 @@
 ---
 layout: base
 permalink: /shows/{{ show.slug }}/index.html
+eleventyComputed:
+    title: "{{ show.title }} - Pete Lambert"
 pagination:
     data: shows
     size: 1
