@@ -61,6 +61,7 @@
 		"@sanity/image-url": "^1.0.2",
 		"dotenv": "^16.0.3",
 		"eleventy-plugin-sanity-image": "^0.1.1",
+		"eleventy-plugin-youtube-embed": "^1.9.0",
 		"groq": "^3.2.4"
 	}
 }

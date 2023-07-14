@@ -6,6 +6,7 @@ const EleventyPluginRss = require('@11ty/eleventy-plugin-rss')
 const EleventyPluginSyntaxhighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
 const embedSpotify = require('eleventy-plugin-embed-spotify')
+const embedYouTube = require('eleventy-plugin-youtube-embed')
 const sanityImage = require('eleventy-plugin-sanity-image')
 const sanityClient = require('./utils/sanityClient.js')
 
@@ -106,6 +107,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(sanityImage, {
 		client: sanityClient // This is your Sanity connection object
 	})
+	eleventyConfig.addPlugin(embedYouTube)
 
 	// Customize Markdown library and settings:
 	let markdownLibrary = markdownIt({
