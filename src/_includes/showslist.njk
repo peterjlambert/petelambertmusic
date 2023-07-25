@@ -4,6 +4,7 @@
         <h2 class="showlist__title">
           {{ show.title }}
         </h2>
+        {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
         <time 
           class="show__time" 
           datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
@@ -20,7 +21,6 @@
               Tickets
             </a>
           {% endif %}
-        {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
       </article>
   {% endfor %}
 {% else %}
