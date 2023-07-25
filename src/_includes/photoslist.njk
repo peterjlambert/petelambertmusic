@@ -1,11 +1,10 @@
 
 <ul class="photoGallery">
 
-{%- for item in pagination.items %}
+{%- for item in photos %}
     <li class="photoGallery__item">
         <a href="/photos/{{item.slug}}/">
         {% image item.imageUrl, item.alt, "photo__image" %}
-          
         </a>
     </li>
 {%- endfor %}

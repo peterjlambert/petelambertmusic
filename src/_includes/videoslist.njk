@@ -1,0 +1,12 @@
+
+{% if videos | length > 0 %}
+  {% for video in videos | reverse %}
+    <div class="video">
+      {{ video.embedCode | safe }}
+      <p><a href="{{video.videoUrl}}">{{ video.title }}</a></p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>There are no videos yet. Check back later.</p>
+{% endif %}
+
