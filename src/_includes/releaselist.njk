@@ -11,7 +11,7 @@
         </div>
         <div>
           <h2 class="release__title">
-            <a href="{{release.slug}}">{{ release.title }}</a>
+            <a href="/music/{{release.slug}}">{{ release.title }}</a>
           </h2>
           {% if release.spotifyEmbedUrl %}
             <div class="release__spotify">
@@ -22,7 +22,12 @@
 
           {% if release.subtitle %}<p class="release__subtitle">{{release.subtitle}}</p>{% endif %}
           <div class="releaselist__description">
-            {{ release.body | markdownify | safe}}
+            {% if release.excerpt %}
+              <p>{{ release.excerpt | markdownify | safe }}</p>
+              <a href="/music/{{release.slug}}">Read more about '{{ release.title }}'</a>
+            {% else %}
+              {{ release.body | markdownify | safe}}
+            {% endif %}
           </div>
           {% if release.presaveLink %}
             <a 
