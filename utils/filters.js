@@ -32,5 +32,8 @@ module.exports = {
 	readableTime: (dateObj) => {
 		const options = { hour: 'numeric', minute: 'numeric', hour12: false }
 		return new Date(dateObj).toLocaleTimeString([], options)
+	},
+	firstItem: (arr) => {
+		return arr[0]
 	}
 }

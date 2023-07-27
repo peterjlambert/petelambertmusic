@@ -1,0 +1,13 @@
+{% set bioContent = bio | reverse | firstItem %}
+
+<div class="bio">
+  <div class="bio__content">
+    <h1>{{ bioContent.title }}</h1>
+    <img 
+      class="bio__photo" 
+      src="{%  imageUrlFor bioContent.photo, 900  %}" 
+      alt="{bioContent.altText}"
+    >
+    {{ bioContent.body | markdownify | safe }}
+  </div>
+</div>
