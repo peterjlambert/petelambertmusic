@@ -10,6 +10,10 @@ package-lock.json
 # Eleventy
 _site/
 
+
+# Cache
+.cache/
+
 # Misc
 .DS_Store
 .env
@@ -17,5 +21,4 @@ _site/
 # Local Netlify folder
 .netlify
 
-# Cache
-.cache/
+.cache

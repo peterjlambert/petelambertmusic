@@ -14,7 +14,7 @@ async function getBio() {
 	const projection = groq`{
     ...,
   }`
-	const order = ``
+	const order = ` | order(_createdAt desc)`
 	const query = [filter, projection, order].join(' ')
 	const docs = await client.fetch(query).catch((err) => console.error(err))
 	const preparePosts = docs.map(generatePost)
