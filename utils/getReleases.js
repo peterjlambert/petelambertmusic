@@ -11,7 +11,16 @@ function generatePost(post) {
 }
 
 async function getReleases() {
-	const filter = groq`*[_type == "release" && outnow==true]`
+	// const filter = groq`*[_type == "release" && outnow==true]`
+	const filter = groq`*[
+  	_type == "release" &&
+	  (
+	    // Is either a draft -> drafts are always fresher
+	    _id in path("drafts.**") ||
+	    // Or a published document with no draft
+	    !defined(*[_id == "drafts." + ^._id][0])
+	  ) && outnow == true
+	]`
 	const projection = groq`{
     ...,
     'slug': slug.current,
