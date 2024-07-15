@@ -13,9 +13,13 @@
 	text-align: center;
 }
 
+.show__title {
+	font-size: var(--fluid-2);
+	margin-bottom: 0;
+}
 .showlist__title {
 	font-size: var(--fluid-1);
-	margin-bottom: 0;
+	margin-bottom: 1rem;
 }
 
 .showlist__item:has(a + time) h2 {
@@ -31,10 +35,12 @@
 	text-transform: uppercase;
 }
 
-.show__time {
+.show__meta {
+	font-family: var(--fontFamilyHeading);
 	display: block;
 	text-align: center;
 	margin-bottom: 0.5rem;
+	margin-top: 0;
 }
 
 .show__tickets {

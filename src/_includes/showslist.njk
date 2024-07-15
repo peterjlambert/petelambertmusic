@@ -2,15 +2,21 @@
   {% for show in shows %}
       <article class="showlist__item">
         <h2 class="showlist__title">
-          {{ show.title }}
+          {% if show.body %}
+            <a href="/shows/{{ show.slug }}">{{ show.title }}</a>
+          {% else %}
+            {{ show.title }}
+          {% endif %}
         </h2>
         {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
-        <time 
-          class="show__time" 
-          datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
-          >
-          {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
-        </time>
+        <p class="show__meta">
+              {{ show.location }} @
+              <time 
+              datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
+              >
+              {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
+              </time>
+          </p>
           {% if show.url %}
             <a 
               class="button button--mini" 

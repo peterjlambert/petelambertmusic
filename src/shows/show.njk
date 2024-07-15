@@ -8,24 +8,31 @@ pagination:
     size: 1
     alias: show
 ---
-<article> 
     <div class="container">
         <div class="container__content">
-            <article class="show">
-                <h2>
-                    {% if soldout %}
-                        <span class="show__soldout">Sold Out - </span>
-                    {% endif %}
-                    {{ title }}
-                </h2>
-                {% if subtitle %}
-                    <h3>{{ subtitle }}</h3>
-                {% endif %}
-                <time class="show__time" datetime="{{ page.date | dateToFormat('yyyy-MM-dd t') }}">{{ page.date | dateToFormat('dd LLL yyyy') }} &middot; {{ page.date | dateToFormat('t') }}</time>
-                {{ content | safe }}
-                {% if url and not soldout %}
-                    <div class="show__tickets"><a href="{{ urk }}" class="button button--primary">Buy Tickets</a></div>
-                {% endif %}
-            </article>
-        </div>
-</article>
+        <article class="show">
+            <h1 class="show__title">
+                {{ show.title }}
+            </h1>
+            {% if show.subtitle %}<p class="show__subtitle">{{show.subtitle}}</p>{% endif %}
+            <p class="show__meta">
+                {{ show.location }} @
+                <time 
+                datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
+                >
+                {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
+                </time>
+            </p>
+            <div class="show__content">{{ show.body | markdownify | safe }}</div>
+            {% if show.url %}
+                <a 
+                class="button button--mini" 
+                href="{{ show.url }}" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                >
+                Tickets
+                </a>
+            {% endif %}
+        </article>
+    </div>
