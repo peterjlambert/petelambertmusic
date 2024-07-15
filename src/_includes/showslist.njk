@@ -10,7 +10,7 @@
         </h2>
         {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
         <p class="show__meta">
-              {{ show.location }} @
+              {{ show.location }} &middot;
               <time 
               datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
               >

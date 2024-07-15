@@ -8,7 +8,7 @@
 }
 
 .showlist__item {
-	border-top: 1px solid var(--borderColor);
+	border-bottom: 1px solid var(--borderColor);
 	padding-bottom: 2rem;
 	text-align: center;
 }
@@ -19,7 +19,7 @@
 }
 .showlist__title {
 	font-size: var(--fluid-1);
-	margin-bottom: 1rem;
+	margin-bottom: 0rem;
 }
 
 .showlist__item:has(a + time) h2 {
