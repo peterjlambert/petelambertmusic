@@ -34,7 +34,7 @@ pagination:
           <div class="releaselist__description">
             {{ release.body | markdownify | safe}}
           </div>
-          {% if release.presaveLink %}
+          {% if release.presaveLink !="" %}
             <a 
               class="button release__presave" 
               href="{{ release.presaveLink }}" 
