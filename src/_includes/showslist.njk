@@ -10,13 +10,23 @@
         </h2>
         {% if show.subtitle %}<p class="showlist__subtitle">{{show.subtitle}}</p>{% endif %}
         <p class="show__meta">
-              {{ show.location }} &middot;
-              <time 
-              datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
+            {{ show.location }} &middot;
+            <time 
+            datetime="{{ show.date | dateToFormat('yyyy-MM-dd t') }}"
+            >
+            {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
+            </time>
+        </p>
+        {% if show.image %}
+            <a href="/shows/{{ show.slug }}">
+              <img 
+              src="{%  imageUrlFor show.image, 900  %}" 
+              alt="{{ show.title }} Poster"
+              class="show__image"
               >
-              {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
-              </time>
-          </p>
+            </a>
+        {% endif %}
+        
           {% if show.url %}
             <a 
               class="button button--mini" 

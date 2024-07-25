@@ -21,6 +21,11 @@
 	font-size: var(--fluid-1);
 	margin-bottom: 0rem;
 }
+.show__image {
+	border-radius: 0.25rem;
+	display: block;
+	margin: 1rem auto;
+}
 
 .showlist__item:has(a + time) h2 {
 	margin-bottom: 1rem;

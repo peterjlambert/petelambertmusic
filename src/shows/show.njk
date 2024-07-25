@@ -23,6 +23,14 @@ pagination:
                 {{ show.date | readableDate }} &middot; {{ show.date | readableTime }}
                 </time>
             </p>
+            {% if show.image %}
+                <img 
+                src="{%  imageUrlFor show.image, 900  %}" 
+                alt="{{ show.title }} Poster"
+                class="show__image"
+                >
+            {% endif %}
+
             <div class="show__content">{{ show.body | markdownify | safe }}</div>
             {% if show.url %}
                 <a 
