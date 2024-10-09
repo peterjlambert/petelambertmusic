@@ -6,25 +6,16 @@ title: Pete Lambert
 <div class="container hero hero--homepage" id="hero">
   <section class="hero__content">
     {% set release = releases | reverse | first %}
-      {% if release.purchaseUrl %}
+      
         <a  
-          href="{{ release.purchaseUrl }}" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          >
+          href="/music/{{ release.slug }}">
           <img 
             class="hero__art" 
             src="{%  imageUrlFor release.artwork, 900  %}" 
             alt="{{ release.title }} Cover Art"
           >
         </a>
-      {% else %}
-        <img 
-          class="hero__art" 
-          src="{%  imageUrlFor release.artwork, 900  %}" 
-          alt="{{ release.title }} Cover Art"
-        >
-      {% endif %}
+      
     
     <div class="hero__text">
       
