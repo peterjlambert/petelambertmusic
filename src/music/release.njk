@@ -30,6 +30,25 @@ pagination:
             </div>
           {% endif %}
 
+					<div class="release__links">
+            {% if release.links %}
+              <ul class="release__linklist">
+                {% for link in release.links %}
+                  <li>
+                    <a 
+                      class="button button--mini" 
+                      href="{{ link.url }}" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      >
+                      {{ link.label }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+
           {% if release.subtitle %}<p class="release__subtitle">{{release.subtitle}}</p>{% endif %}
           <div class="releaselist__description">
             {{ release.body | markdownify | safe}}
