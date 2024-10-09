@@ -1,6 +1,7 @@
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	font-family: var(--fontFamilyHeading);
 	letter-spacing: 0.03em;
 	text-align: center;
@@ -21,4 +22,8 @@ h2 {
 h3 {
 	font-size: var(--fluid-1);
 	margin-bottom: 1rem;
+}
+
+h4 {
+	font-size: var(--fluid-0);
 }
